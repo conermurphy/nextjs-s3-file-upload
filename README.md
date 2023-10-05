@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js App Router, AWS S3 Bucket Presigned URLs
+
+In this repository, is an example Next.js App Router project and AWS CDK stack that shows how to upload files (image in this example) to an AWS S3 bucket via presigned URLs generated on a router handler and display them on the browser.
+
+## Packages Used
+
+Below are the packages used in the project to generaete the presigned URLs as well as handle the form logic and submission. Alongside these, we use Next.js 13 and React 18.
+
+- [`@aws-sdk/client-s3`](https://www.npmjs.com/package/@aws-sdk/client-s3)
+- [`@aws-sdk/s3-request-presigner`](https://www.npmjs.com/package/@aws-sdk/s3-request-presigner)
+- [`react-hook-form`](https://www.npmjs.com/package/react-hook-form)
 
 ## Getting Started
 
-First, run the development server:
+If you would like to run the project for yourself, you can clone the repository and run the following commands:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- `npm install` (performed in both the root directory and `cdk` directory)
+- `cdk deploy` (performed in the `cdk` directory)
+- `npm run dev` (performed in the root directory)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You'll also need to configure the `.env.local` file which you can do by copying the `.env.local.example` file and renaming it to `.env.local` and filling in the values using the values outputted from the `cdk deploy` command.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Guide
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you would like to [see the full written tutorial for this project, you can check out my blog post here.](https://conermurphy.com/blog/presigned-urls-nextjs-s3-upload)
